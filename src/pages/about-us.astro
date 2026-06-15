@@ -2,4 +2,40 @@
 import Default from "../layouts/default.astro";
 ---
 <Default title="About Us" desc="About us">
+    <!-- Animation -->
+    <div class="flex justify-center">
+        <video class="w-[50%]" controls autoplay>
+            <source src="/Sweet-Hedges-Farm/animation.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="my-6">
+        <h2>What is Deforestation?</h2>
+        <p>
+            Deforestation is one of the biggest environmental issues that are plaguing our planet. Large number of trees are
+            cut down since they are used for many things e.g. fuel. However, deforestation can lead to climate change and such
+            because trees are very important in ensuring that doesn't happen.
+
+            <br><br>
+
+            Trees give oxygen to us all which pretty much all living beings require to breathe. They also consume any carbon
+            dioxide from the atmosphere which keeps global warming in check which in turn also stops climate change as
+            carbon dioxide is one of the greenhouse gases which means it can trap heat from the sun in the Earth's
+            atmosphere.
+        </p>
+    </div>
+
+    <!-- Information about deforestation -->
+    <div class="flex justify-center">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/P_bJjPR4Xog?si=385Ww19PALlvGcp1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+    </div>
 </Default>

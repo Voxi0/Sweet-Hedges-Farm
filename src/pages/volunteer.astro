@@ -2,5 +2,42 @@
 import Default from "../layouts/default.astro";
 ---
 <Default title="Volunteer page" desc="Join our volunteers to fight against deforestation">
-    <h1>Hi</h1>
+    <main>
+        <!-- Volunteer description -->
+        <div>
+            <h1>Join Our Team of Volunteers</h1>
+            <p>
+                Fight against deforestation with us by planting more trees and picking up recyclable materials e.g. plastic
+                bottles to both clean up the planet and to recycle materials to avoid harvesting new materials.
+            </p>
+        </div>
+
+        <!-- Signup form -->
+        <div>
+            <h2>Sign Up</h2>
+            <form action="mailto:voxi00@proton.me" class="border p-4">
+                <!-- Name -->
+                <label for="name" class="font-bold text-red">Name</label>
+                <br>
+                <input id="name" name="name" type="text" class="border w-full px-2 mb-2" placeholder="Enter Your Email Address">
+
+                <br>
+
+                <!-- Email address -->
+                <label for="emailAddress" class="font-bold text-red">Email Address</label>
+                <br>
+                <input id="emailAddress" name="email_address" type="email" class="border w-full px-2 mb-2" placeholder="Enter Your Email Address">
+
+                <br>
+
+                <!-- Extra message -->
+                <label for="extraMsg" class="font-bold text-red">Extra Message (Optional)</label>
+                <br>
+                <textarea id="extraMsg" name="extra_message" type="text" class="border w-full"></textarea>
+
+                <!-- Submit button -->
+                <input type="submit" class="button w-full mt-6 p-4" value="Submit Application">
+            </form>
+        </div>
+    </main>
 </Default>

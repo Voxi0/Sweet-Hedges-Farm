@@ -37,7 +37,7 @@
 
     /* Button */
     button {
-        @apply bg-green text-crust p-1 rounded-md transition duration-250 hover:cursor-pointer;
+        @apply bg-green border text-crust p-1 rounded-md transition duration-250 hover:cursor-pointer;
     }
     button:hover, button.active {
         @apply bg-red;
