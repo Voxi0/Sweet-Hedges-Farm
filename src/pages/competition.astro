@@ -1,6 +1,47 @@
 ---
 import Default from "../layouts/default.astro";
 ---
-<Default>
-    <h1>Hi</h1>
+<Default title="About Us" desc="Competition volunteer page">
+    <main>
+        <h1>Join our Environmental Competition</h1>
+        <p>
+            Take part in our environmental competition to help make the Earth a greener
+            place by planting as many trees and plants as possible daily. All those who
+            join will be given a certificate for joining and the winner who has planted
+            the most will earn a prize and gain recognition on our website!
+        </p>
+
+        <div>
+            <h2>Rules</h2>
+            <ul class="list-disc list-inside text-center">
+                <li>Take a picture of all the plants you have planted daily</li>
+                <li>Record atleast one video of yourself planting some plants and trees as proof daily</li>
+                <li>
+                    Have fun! While this is a competition, remember that you're already significantly
+                    helping our Earth out by just volunteering.
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Sign Up</h2>
+            <form class="border p-4">
+                <label for="name" class="font-bold text-red">Name</label>
+                <br>
+                <input id="name" class="border w-full px-2 mb-2" type="email" placeholder="Enter Your Email Address">
+
+                <br>
+
+                <label for="emailAddress" class="font-bold text-red">Email Address</label>
+                <br>
+                <input id="emailAddress" class="border w-full px-2 mb-2" type="email" placeholder="Enter Your Email Address">
+
+                <br>
+
+                <label for="extraMsg" class="font-bold text-red">Extra Message (Optional)</label>
+                <br>
+                <textarea id="extraMsg" class="border w-full"></textarea>
+            </form>
+        </div>
+    </main>
 </Default>
