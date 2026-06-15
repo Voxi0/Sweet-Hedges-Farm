@@ -1,11 +1,13 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-
-import tailwindcss from '@tailwindcss/vite';
-
-// https://astro.build/config
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
-  }
+    site: "https://voxi0.github.io",
+    base: "/Sweet-Hedges-Farm",
+    vite: {
+        plugins: [tailwindcss()],
+        resolve: {
+            tsconfigPaths: true,
+        }
+    }
 });
