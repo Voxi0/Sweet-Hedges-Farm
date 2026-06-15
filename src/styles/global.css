@@ -1,6 +1,9 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
 @theme {
+    --font-RobotoCondensed: "Roboto Condensed";
+
     --color-*: initial;
 
     /* Background colors */
@@ -18,12 +21,23 @@
 
 @layer base {
     body {
-        @apply bg-base text-text;
+        @apply bg-crust text-text font-RobotoCondensed md:px-16 lg:px-32;
+    }
+
+    h1 {
+        @apply text-4xl font-bold text-red text-center my-6;
+    }
+    h2 {
+        @apply text-3xl font-bold text-red text-center my-4;
+    }
+
+    b {
+        @apply text-red;
     }
 
     /* Button */
     button {
-        @apply bg-green text-mantle p-1 rounded-md transition duration-250 hover:cursor-pointer;
+        @apply bg-green text-crust p-1 rounded-md transition duration-250 hover:cursor-pointer;
     }
     button:hover, button.active {
         @apply bg-red;
