@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer base {
+    a {
+        @apply no-underline;
+    }
+    a.active {
+        @apply text-red-800;
+    }
+}

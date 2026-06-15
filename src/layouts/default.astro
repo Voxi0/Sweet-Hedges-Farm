@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+import Header from "../components/header.astro";
+const {title, desc} = Astro.props;
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="generator" content={Astro.generator}/>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+		<link rel="icon" href="/favicon.ico"/>
+
+		<!-- Title and description -->
+		<title>{title}</title>
+		<meta name="description" content={desc}/>
+	</head>
+	<body>
+        <Header/>
+        <div class="container mx-auto">
+            <slot/>
+        </div>
+	</body>
+</html>

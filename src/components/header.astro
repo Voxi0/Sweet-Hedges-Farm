@@ -1,0 +1,21 @@
+---
+import {Image} from "astro:assets";
+import ActiveLink from "./active_link.astro";
+---
+<head>
+    <nav class="m-4 flex flex-row items-center gap-4">
+        <Image
+            src="/logo.avif"
+            alt="Logo"
+            loading="eager"
+            width=32
+            height=32
+        />
+
+        <button class="bg-black text-white px-2 hover:text-black hover:bg-white border border-white rounded-md md:hidden">=</button>
+        <ActiveLink href="/">Home</ActiveLink>
+        <ActiveLink href="/about-us">About Us</ActiveLink>
+        <ActiveLink href="/competition">Competition</ActiveLink>
+        <ActiveLink href="/volunteer">Volunteer</ActiveLink>
+    </nav>
+</head>
