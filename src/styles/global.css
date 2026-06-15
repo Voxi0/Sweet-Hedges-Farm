@@ -20,10 +20,12 @@
 }
 
 @layer base {
+    /* Body */
     body {
         @apply bg-crust text-text font-RobotoCondensed md:px-16 lg:px-32;
     }
 
+    /* Headers */
     h1 {
         @apply text-4xl font-bold text-red text-center my-6;
     }
@@ -31,15 +33,19 @@
         @apply text-3xl font-bold text-red text-center my-4;
     }
 
+    /* Bold text */
     b {
         @apply text-red;
     }
+}
 
+/* Reusable components */
+@layer components {
     /* Button */
-    button {
+    .button {
         @apply bg-green border text-crust p-1 rounded-md transition duration-250 hover:cursor-pointer;
     }
-    button:hover, button.active {
+    .button:hover, .button.active {
         @apply bg-red;
     }
 }

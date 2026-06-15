@@ -4,10 +4,10 @@ type Props = HTMLAttributes<"a">;
 const { href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+const isActive = `/Sweet-Hedges-Farm${href}` === pathname || `/Sweet-Hedges-Farm${href}` === pathname.replace(/\/$/, '');
 ---
-<a href={`/Sweet-Hedges-Farm${href}`} class:list={[className, { active: isActive }]} {...props}>
-    <button class:list={["w-full", { active: isActive }]}>
+<a href=`/Sweet-Hedges-Farm${href}` class:list={[className, { active: isActive }]} {...props}>
+    <button class:list={["button w-full", { active: isActive }]}>
         <slot/>
     </button>
 </a>
