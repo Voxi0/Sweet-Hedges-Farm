@@ -6,8 +6,8 @@ const { href, class: className, ...props } = Astro.props;
 const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 ---
-<button class="bg-black text-white md:p-1 rounded-md">
-    <a href={href} class:list={[className, { active: isActive }]} {...props}>
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
+    <button class:list={["button w-full", { active: isActive }]}>
         <slot>
-    </a>
-</button>
+    </button>
+</a>

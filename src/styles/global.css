@@ -1,10 +1,31 @@
 @import "tailwindcss";
 
+@theme {
+    --color-*: initial;
+
+    /* Background colors */
+    --color-crust: #11111b;
+    --color-mantle: #181825;
+    --color-base: #1e1e2e;
+
+    /* Text colors */
+    --color-text: #cdd6f4;
+
+    /* General colors */
+    --color-red: #f38ba8;
+    --color-green: #a6e3a1;
+}
+
 @layer base {
-    a {
-        @apply no-underline;
+    body {
+        @apply bg-base text-text;
     }
-    a.active {
-        @apply text-red-800;
+
+    /* Button */
+    button {
+        @apply bg-green text-mantle p-1 rounded-md transition duration-250 hover:cursor-pointer;
+    }
+    button:hover, button.active {
+        @apply bg-red;
     }
 }

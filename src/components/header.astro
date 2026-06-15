@@ -1,21 +1,83 @@
 ---
 import {Image} from "astro:assets";
+import Logo from "../assets/logo.avif";
+import Banner from "../assets/banner.avif";
 import ActiveLink from "./active_link.astro";
+
+const links = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Competition", href: "/competition" },
+    { name: "Volunteer", href: "/volunteer" },
+];
 ---
-<head>
-    <nav class="m-4 flex flex-row items-center gap-4">
+<!-- Handle displaying the navbar properly using the hamburger menu icon -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("nav-toggle-button");
+        const icons = document.querySelectorAll(".toggle-icon")
+        const nav = document.querySelector("nav");
+        
+        // Display navigation buttons when the hamburger button is pressed
+        toggleButton.addEventListener("click", () => {
+            icons.forEach(i => i.classList.toggle("hidden"));
+            const fullHeight = nav.scrollHeight + "px"
+            if (nav.style.height === fullHeight) {
+                nav.style.height = 0
+                return
+            }
+            nav.style.height = fullHeight
+        })
+
+        // Listen for screen resizing to reset the toggle state
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 768) {
+                // Remove the inline height styles entirely on desktop
+                nav.style.removeProperty("height");
+
+                // Ensure icons reset to their default state if any
+                icons.forEach(i => i.classList.remove("hidden"));
+            } else {
+                // If switching back to mobile, force it safely back to 0px (Closed)
+                nav.style.height = "0px";
+            }
+        });
+    });
+</script>
+    
+<!-- Header -->
+<header class="m-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div class="flex flex-row justify-between items-center gap-2">
+        <!-- Logo -->
         <Image
-            src="/logo.avif"
+            src={Logo}
             alt="Logo"
             loading="eager"
-            width=32
-            height=32
+            height=50
         />
 
-        <button class="bg-black text-white px-2 hover:text-black hover:bg-white border border-white rounded-md md:hidden">=</button>
-        <ActiveLink href="/">Home</ActiveLink>
-        <ActiveLink href="/about-us">About Us</ActiveLink>
-        <ActiveLink href="/competition">Competition</ActiveLink>
-        <ActiveLink href="/volunteer">Volunteer</ActiveLink>
+        <!-- Hamburger menu button -->
+        <button id="nav-toggle-button" class="button md:hidden justify-end" aria-label="Toggle Navigation">
+            <!-- Hamburger menu icon -->
+            <svg
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="w-6 h-6 text-slate-800 hover:text-slate-600 transition-colors"
+            >
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+    <nav class="
+        md:my-0
+        flex flex-col md:flex-row md:items-center gap-2
+        overflow-hidden md:overflow-visible
+        transition-all ease-in-out
+    ">
+        {links.map(({name, href}) => (
+            <ActiveLink href={href}>{name}</ActiveLink>
+        ))}
     </nav>
-</head>
+</header>
