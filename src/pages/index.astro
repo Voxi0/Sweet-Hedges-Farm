@@ -3,11 +3,78 @@ import {Image} from "astro:assets";
 import Banner from "../assets/banner.avif";
 import Default from "../layouts/default.astro";
 ---
-<Default>
+<Default title="Help the Earth" desc="An environmental awareness organization focused on deforestation">
+    <!-- Banner -->
     <Image
         src={Banner}
         alt="Campaign banner"
         class="w-auto"
     />
-	<h1 class="font-bold underline text-center">Hello World!</h1>
+
+    <!-- Main content -->
+    <main>
+        <!-- Introduction -->
+        <div>
+            <h1>Help the Earth</h1>
+            <p class="text-lg font-bold text-center">
+                An environmental organization focused on raising awareness about the harmful
+                effects of deforestation on our home planet.
+            </p>
+        </div>
+
+        <!-- Description -->
+        <div>
+            <h2>Our Mission</h2>
+            <p>
+                Deforestation is the intentional clearing of forested land, primarily for
+                agriculture, livestock grazing, and urban development. It significantly impacts
+                biodiversity, climate change, and the environment. It leads to far-reaching
+                consequences that will end up affecting the future generation heavily.
+
+                <br><br>
+
+                The consequences of deforestation are severe from significantly contributing to
+                global warming and climate change to threatening many species with extinction
+                as approximately 80% of Earth's terrestrial animals and plants depends on forests
+                for habitat.
+
+                <br><br>
+
+                We encourage people to fight against deforestation because the only we can fight
+                against it is by working together as a whole. Even the smallest changes in our daily
+                lifestyle can make quite the difference.
+
+                <br><br>
+
+                Every little action makes a difference. Just focus on doing as much as possible to help
+                constantly.
+            </p>
+        </div>
+
+        <!-- Ways to fight against deforestation -->
+        <div>
+            <h2>How You Can Help</h2>
+            <ul class="list-disc list-inside text-lg text-center">
+                <li>
+                    <b>Plant trees:</b>
+                    Planting any kind of plants and trees in your local community
+                    is a great way for anyone to fight against deforestation because basically
+                    everyone can do it.
+                </li>
+
+                <li>
+                    <b>Recycle and Reduce Waste:</b>
+                    This reduces the need to harvest new raw materials e.g. timber and wood for
+                    products. By recycling paper and wood, we can conserve forests and protect
+                    ecosystems from the harmful impacts of logging.
+                </li>
+
+                <li>
+                    <b>Spread Awareness:</b>
+                    Inform as many people as you can about deforestation and it's harmful effects
+                    and how they can help fight against it.
+                </li>
+            </ul>
+        </div>
+    </main>
 </Default>
