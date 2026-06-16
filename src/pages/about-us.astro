@@ -4,8 +4,12 @@ import Default from "../layouts/default.astro";
 <Default title="About Us" desc="About us">
     <!-- Animation -->
     <div class="flex justify-center">
-        <video class="w-[50%]" controls autoplay>
+        <video class="w-[50%]" controls autoplay loop>
+            <!-- The video -->
             <source src="/Sweet-Hedges-Farm/animation.mp4" type="video/mp4">
+
+            <!-- If the video can't load -->
+            Your browser does not support the `<video>` HTML tag
         </video>
     </div>
 
